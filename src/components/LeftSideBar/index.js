@@ -50,7 +50,7 @@ class LeftSideBar extends Component {
                 ))}
               </LeftBarTopSectionBgContainer>
               <LeftBarBottomSection>
-                <LeftBarHeadingText darkMode={darkMode}>
+                <LeftBarHeadingText darkMode={darkMode} as="p">
                   CONTACT US
                 </LeftBarHeadingText>
                 <SocialMediaLinksContainer>
@@ -67,7 +67,7 @@ class LeftSideBar extends Component {
                     alt="linked in logo"
                   />
                 </SocialMediaLinksContainer>
-                <LeftBarHeadingText description darkMode={darkMode}>
+                <LeftBarHeadingText description darkMode={darkMode} as="p">
                   Enjoy! Now to see your channels and recommendations!
                 </LeftBarHeadingText>
               </LeftBarBottomSection>

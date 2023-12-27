@@ -25,6 +25,7 @@ import {
   ButtonsContainer,
   CustomLogoutPopupButton,
   CustomLogoutCancelPopupButton,
+  NavItem,
 } from './StyledComponents'
 import {StyledLink} from '../TabItem/StyledComponents'
 
@@ -33,7 +34,7 @@ const Header = props => {
   const logout = () => {
     Cookies.remove('jwt_token')
     const {history} = props
-    history.replace('/')
+    history.replace('/login')
   }
   return (
     <AppContext.Consumer>
@@ -44,6 +45,7 @@ const Header = props => {
           <HeaderBackgroundContainer darkMode={darkMode}>
             <StyledLink to="/">
               <HeaderSectionCustomImgElement
+                alt="website logo"
                 src={`${
                   darkMode
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
@@ -52,88 +54,137 @@ const Header = props => {
               />
             </StyledLink>
             <HeaderRightSideContainer>
-              <HeaderCustomButton onClick={toggleTheme}>
-                {darkMode ? (
-                  <FiSun size={20} color="#f9f9f9" />
-                ) : (
-                  <FaMoon size={20} />
-                )}
-              </HeaderCustomButton>
-              <ProfileButton large>
-                <HeaderSectionCustomImgElement
-                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-                  profile="true"
-                />
-              </ProfileButton>
-
-              <Popup
-                modal
-                trigger={
-                  <TabsMenuContainer small darkMode={darkMode}>
-                    <GiHamburgerMenu
-                      size={20}
-                      color={darkMode ? '#ffffff' : '#000000'}
-                    />
-                  </TabsMenuContainer>
-                }
-              >
-                {close => (
-                  <PopupContainer darkMode={darkMode}>
-                    <MenuTabsButton onClick={() => close()} type="button" small>
-                      <MdClose
-                        size={25}
+              <NavItem>
+                <HeaderCustomButton
+                  onClick={toggleTheme}
+                  data-testid="theme"
+                  type="button"
+                >
+                  {darkMode ? (
+                    <FiSun size={20} color="#f9f9f9" />
+                  ) : (
+                    <FaMoon size={20} />
+                  )}
+                </HeaderCustomButton>
+              </NavItem>
+              <NavItem>
+                <ProfileButton large>
+                  <HeaderSectionCustomImgElement
+                    alt="profile"
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                    profile="true"
+                  />
+                </ProfileButton>
+              </NavItem>
+              <NavItem>
+                <Popup
+                  modal
+                  trigger={
+                    <TabsMenuContainer small darkMode={darkMode}>
+                      <GiHamburgerMenu
+                        size={20}
                         color={darkMode ? '#ffffff' : '#000000'}
                       />
-                    </MenuTabsButton>
-                    <LeftSideBarMobileViewContainer>
-                      <LeftSideBar />
-                    </LeftSideBarMobileViewContainer>
-                  </PopupContainer>
-                )}
-              </Popup>
-
-              <Popup
-                trigger={
-                  <LogoutButton
-                    type="button"
-                    darkMode={darkMode}
-                    large
-                    onClick={logout}
-                  >
-                    Logout
-                  </LogoutButton>
-                }
-                modal
-              >
-                {close => (
-                  <LogoutPopupContainer darkMode={darkMode}>
-                    <LogoutPopupText darkMode={darkMode}>
-                      Are you sure you want to logout?
-                    </LogoutPopupText>
-                    <ButtonsContainer>
-                      <CustomLogoutCancelPopupButton
+                    </TabsMenuContainer>
+                  }
+                >
+                  {close => (
+                    <PopupContainer darkMode={darkMode}>
+                      <MenuTabsButton
                         onClick={() => close()}
-                        cancelButton="true"
-                        darkMode={darkMode}
+                        type="button"
+                        small
                       >
-                        Cancel
-                      </CustomLogoutCancelPopupButton>
-                      <CustomLogoutPopupButton onClick={logout} logout="true">
-                        Logout
-                      </CustomLogoutPopupButton>
-                    </ButtonsContainer>
-                  </LogoutPopupContainer>
-                )}
-              </Popup>
+                        <MdClose
+                          size={25}
+                          color={darkMode ? '#ffffff' : '#000000'}
+                        />
+                      </MenuTabsButton>
+                      <LeftSideBarMobileViewContainer>
+                        <LeftSideBar />
+                      </LeftSideBarMobileViewContainer>
+                    </PopupContainer>
+                  )}
+                </Popup>
+              </NavItem>
 
-              <LogoutButton
-                type="button"
-                darkMode={darkMode}
-                small
-                onClick={logout}
-              >
-                <FiLogOut size={20} />
-              </LogoutButton>
+              <NavItem>
+                <Popup
+                  trigger={
+                    <LogoutButton
+                      type="button"
+                      darkMode={darkMode}
+                      large="true"
+                    >
+                      Logout
+                    </LogoutButton>
+                  }
+                  modal
+                >
+                  {close => (
+                    <LogoutPopupContainer darkMode={darkMode}>
+                      <LogoutPopupText darkMode={darkMode} as="p">
+                        Are you sure, you want to logout
+                      </LogoutPopupText>
+                      <ButtonsContainer>
+                        <CustomLogoutCancelPopupButton
+                          onClick={() => close()}
+                          cancelButton="true"
+                          darkMode={darkMode}
+                          type="button"
+                        >
+                          Cancel
+                        </CustomLogoutCancelPopupButton>
+                        <CustomLogoutPopupButton
+                          onClick={logout}
+                          logout="true"
+                          type="button"
+                        >
+                          Confirm
+                        </CustomLogoutPopupButton>
+                      </ButtonsContainer>
+                    </LogoutPopupContainer>
+                  )}
+                </Popup>
+              </NavItem>
+              <NavItem>
+                <Popup
+                  trigger={
+                    <LogoutButton
+                      type="button"
+                      darkMode={darkMode}
+                      small="true"
+                    >
+                      <FiLogOut size={20} />
+                    </LogoutButton>
+                  }
+                  modal
+                >
+                  {close => (
+                    <LogoutPopupContainer darkMode={darkMode}>
+                      <LogoutPopupText darkMode={darkMode} as="p">
+                        Are you sure, you want to logout
+                      </LogoutPopupText>
+                      <ButtonsContainer>
+                        <CustomLogoutCancelPopupButton
+                          onClick={() => close()}
+                          cancelButton="true"
+                          darkMode={darkMode}
+                        >
+                          Cancel
+                        </CustomLogoutCancelPopupButton>
+                        <CustomLogoutPopupButton
+                          onClick={logout}
+                          logout="true"
+                          type="button"
+                        >
+                          Confirm
+                        </CustomLogoutPopupButton>
+                      </ButtonsContainer>
+                    </LogoutPopupContainer>
+                  )}
+                </Popup>
+              </NavItem>
             </HeaderRightSideContainer>
           </HeaderBackgroundContainer>
         )

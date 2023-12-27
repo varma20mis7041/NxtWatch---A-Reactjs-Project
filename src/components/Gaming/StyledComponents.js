@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import {IoLogoGameControllerB} from 'react-icons/io'
 
 export const RouteContentContainer = styled.div`
+  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   width: 85vw;
-  margin-top: 8vh;
   @media screen and (min-width: 769px) {
     margin-left: 15vw;
   }
@@ -16,8 +16,8 @@ export const RouteContentContainer = styled.div`
 `
 
 export const GamingRouteLeftSideAndVideosContainer = styled.div`
+  margin-top: 8vh;
   display: flex;
-  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 export const GamingVideosBackgroundContainer = styled.div`
   display: flex;
@@ -80,5 +80,59 @@ export const GamingVideosUnOrderedListContainer = styled.ul`
   }
   @media screen and (max-width: 767px) {
     padding: 22px 0px 22px 22px;
+  }
+`
+
+export const NoVideosContainer = styled.div`
+  height: 92vh;
+  width: 82vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    width: 100vw;
+    justify-content: center;
+  }
+`
+export const NoVideosImgElement = styled.img`
+  height: 250px;
+  width: ${props => (props.failure ? '300px' : '350px')};
+  margin-bottom: 15px;
+  margin-top: 40px;
+  @media (max-width:767px){
+    height:150px;
+    width: ${props => (props.failure ? '200px' : '250px')};s
+  }
+`
+export const NoVideosRetryButton = styled.button`
+  height: 45px;
+  width: 140px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  border-width: 0px;
+  border-radius: 5px;
+  background-color: #4f46e5;
+  cursor: pointer;
+  margin-bottom: 15px;
+  @media (max-width: 767px) {
+    height: 35px;
+    width: 100px;
+    font-size: 13px;
+  }
+`
+export const NoVideoHeadingText = styled.h1`
+  color: ${props =>
+    props.title
+      ? `${props.darkMode ? '#f9f9f9' : '#313131'}`
+      : `${props.darkMode ? '#cccccc' : '#616e7c'}`};
+  font-size: ${props => (props.title ? '25px' : '18px')};
+  font-weight: 500;
+  margin-bottom: 15px;
+  @media screen and (max-width: 767px) {
+    font-size: ${props => (props.title ? '20px' : '13px')};
+    text-align: center;
   }
 `

@@ -58,14 +58,15 @@ export const SavedVideoItemInfoContainer = styled.div`
   flex-direction: column;
 `
 export const SavedVideoChannelProfileImg = styled.img`
-  @media (min-width: 768px) {
+  display: none;
+  @media (max-width: 767px) {
     display: block;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
   }
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
 `
-export const VideoInfoText = styled.h1`
+export const VideoInfoText = styled.p`
   font-size: ${props => (props.title ? '23px' : '16px')};
   font-family: 'Roboto';
   margin-top: 0px;

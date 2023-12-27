@@ -98,11 +98,14 @@ class Login extends Component {
                       ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
                       : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
                   }`}
-                  alt="logo"
+                  alt="website logo"
                 />
                 <LabelContainer>
-                  <LabelElement darkMode={darkMode}>USERNAME</LabelElement>
+                  <LabelElement darkMode={darkMode} htmlFor="username">
+                    USERNAME
+                  </LabelElement>
                   <LabelInputElement
+                    id="username"
                     type="text"
                     placeholder="Username"
                     darkMode={darkMode}
@@ -111,8 +114,11 @@ class Login extends Component {
                   />
                 </LabelContainer>
                 <LabelContainer>
-                  <LabelElement darkMode={darkMode}>PASSWORD</LabelElement>
+                  <LabelElement darkMode={darkMode} htmlFor="password">
+                    PASSWORD
+                  </LabelElement>
                   <LabelInputElement
+                    id="password"
                     type={`${isShowPassword ? 'text' : 'password'}`}
                     placeholder="Password"
                     darkMode={darkMode}

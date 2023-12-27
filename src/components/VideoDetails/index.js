@@ -121,13 +121,16 @@ class VideoDetails extends Component {
               alt="failure view"
             />
             <NoVideoHeadingText title="true" darkMode={darkMode}>
-              Opps! Something Went Wrong
+              Oops! Something Went Wrong
             </NoVideoHeadingText>
             <NoVideoHeadingText darkMode={darkMode} as="p">
-              We are having some trouble to complete your request.Please try
-              again
+              We are having some trouble to complete your request. Please try
+              again.
             </NoVideoHeadingText>
-            <NoVideosRetryButton onClick={this.onClickFailureRetry}>
+            <NoVideosRetryButton
+              onClick={this.onClickFailureRetry}
+              type="button"
+            >
               Retry
             </NoVideosRetryButton>
           </NoVideosContainer>
@@ -199,6 +202,7 @@ class VideoDetails extends Component {
           }
 
           console.log('video_SAVED_details:', videoSavedDetails)
+          const saveButtonTextContent = isSaved ? 'Saved' : 'Save'
 
           return (
             <VideoDetailsContainer>
@@ -206,58 +210,76 @@ class VideoDetails extends Component {
                 <StyledReactPlayer url={videoUrl} controls />
               </VideoContainer>
               <VideoDetailsBottomContainer>
-                <VideoDetailsCustomText title="true" darkMode={darkMode}>
+                <VideoDetailsCustomText title="true" darkMode={darkMode} as="p">
                   {title}
                 </VideoDetailsCustomText>
                 <VideoDetailsMiddleContainer>
                   <ViewsAndAgoContainer>
-                    <VideoDetailsCustomText darkMode={darkMode}>
+                    <VideoDetailsCustomText darkMode={darkMode} as="p">
                       {`${viewCount} Views`}
                     </VideoDetailsCustomText>
                     <DotSpanElement>.</DotSpanElement>
-                    <VideoDetailsCustomText darkMode={darkMode}>
+                    <VideoDetailsCustomText darkMode={darkMode} as="p">
                       {this.getTimeDurationFromPublished(publishedAt)}
                     </VideoDetailsCustomText>
                   </ViewsAndAgoContainer>
                   <LikeDislikeSaveButtonsContainer>
                     <CustomReactionButton
+                      type="button"
                       onClick={updateLikeReaction}
-                      isActive={isActiveLike}
                     >
-                      <BiLike size={18} />
-                      <ReactionButtonText>Like</ReactionButtonText>
+                      <BiLike
+                        size={18}
+                        color={isActiveLike ? '#2563eb' : '#64748b'}
+                      />
+                      <ReactionButtonText isActive={isActiveLike}>
+                        Like
+                      </ReactionButtonText>
                     </CustomReactionButton>
                     <CustomReactionButton
-                      isActive={isActiveDislike}
+                      type="button"
                       onClick={updateDislikeReaction}
                     >
-                      <BiDislike size={18} />
-                      <ReactionButtonText>Dislike</ReactionButtonText>
+                      <BiDislike
+                        size={18}
+                        color={isActiveDislike ? '#2563eb' : '#64748b'}
+                      />
+                      <ReactionButtonText isActive={isActiveDislike}>
+                        Dislike
+                      </ReactionButtonText>
                     </CustomReactionButton>
-                    <CustomReactionButton
-                      onClick={onClickSave}
-                      isActive={isSaved}
-                    >
-                      <RiMenuAddLine size={18} />
-                      <ReactionButtonText>{`${
-                        isSaved ? 'Saved' : 'Save'
-                      }`}</ReactionButtonText>
+                    <CustomReactionButton type="button" onClick={onClickSave}>
+                      <RiMenuAddLine
+                        size={18}
+                        color={isSaved ? '#2563eb' : '#64748b'}
+                      />
+                      <ReactionButtonText isActive={isSaved}>
+                        {saveButtonTextContent}
+                      </ReactionButtonText>
                     </CustomReactionButton>
                   </LikeDislikeSaveButtonsContainer>
                 </VideoDetailsMiddleContainer>
                 <StyledHr />
                 <VideoDetailsChannelDetailsAndDescriptionContainer>
-                  <ChannelProfileImgElement src={channel.profileImageUrl} />
+                  <ChannelProfileImgElement
+                    src={channel.profileImageUrl}
+                    alt="channel logo"
+                  />
                   <ChannelDetailsAndDescriptionContainer>
-                    <ChannelDetailsCustomText title="true" darkMode={darkMode}>
+                    <ChannelDetailsCustomText
+                      title="true"
+                      darkMode={darkMode}
+                      as="p"
+                    >
                       {channel.name}
                     </ChannelDetailsCustomText>
-                    <ChannelDetailsCustomText darkMode={darkMode}>
+                    <ChannelDetailsCustomText darkMode={darkMode} as="p">
                       {`${channel.subscriberCount} subscribers`}
                     </ChannelDetailsCustomText>
                     <VideoDetailsCustomLargeText
                       videoDescription="true"
                       darkMode={darkMode}
+                      as="p"
                     >
                       {description}
                     </VideoDetailsCustomLargeText>
@@ -267,6 +289,7 @@ class VideoDetails extends Component {
                   videoDescription="true"
                   darkMode={darkMode}
                   small="true"
+                  as="p"
                 >
                   {description}
                 </VideoDetailsCustomSmallText>
@@ -300,11 +323,14 @@ class VideoDetails extends Component {
           return (
             <>
               <Header />
-              <VideoDetailsRouteBgContainer darkMode={darkMode}>
+              <VideoDetailsRouteBgContainer>
                 <LeftSideBarDesktopViewContainer>
                   <LeftSideBar />
                 </LeftSideBarDesktopViewContainer>
-                <RouteContentContainer>
+                <RouteContentContainer
+                  data-testid="videoItemDetails"
+                  darkMode={darkMode}
+                >
                   {this.displayVideoDetailsView()}
                 </RouteContentContainer>
               </VideoDetailsRouteBgContainer>

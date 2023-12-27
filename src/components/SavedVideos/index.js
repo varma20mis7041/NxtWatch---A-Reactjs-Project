@@ -48,11 +48,10 @@ class SavedVideos extends Component {
     </AppContext.Consumer>
   )
 
-  displaySavedVideos = () => (
+  displaySavedVideos = savedVideos => (
     <AppContext.Consumer>
       {value => {
-        const {savedList, darkMode} = value
-        console.log(savedList)
+        const {darkMode} = value
 
         return (
           <SavedVideosBackgroundContainer>
@@ -60,12 +59,12 @@ class SavedVideos extends Component {
               <SavedIconContainer darkMode={darkMode}>
                 <StyledSaveIcon color="#ff0b37" />
               </SavedIconContainer>
-              <SavedVideosMainHeadingText darkMode={darkMode}>
-                Saved videos
+              <SavedVideosMainHeadingText darkMode={darkMode} as="h1">
+                Saved Videos
               </SavedVideosMainHeadingText>
             </SavedVideosTopSectionContainer>
             <SavedVideosUnOrderListContainer darkMode={darkMode}>
-              {savedList.map(eachItem => (
+              {savedVideos.map(eachItem => (
                 <SavedVideoItem videoDetails={eachItem} key={eachItem.id} />
               ))}
             </SavedVideosUnOrderListContainer>
@@ -79,9 +78,12 @@ class SavedVideos extends Component {
     <AppContext.Consumer>
       {value => {
         const {savedList} = value
-        return savedList.length === 0
+        const savedVideos = savedList.filter(
+          eachVideo => eachVideo.isSaved === true,
+        )
+        return savedVideos.length === 0
           ? this.displayNoVideosView()
-          : this.displaySavedVideos()
+          : this.displaySavedVideos(savedVideos)
       }}
     </AppContext.Consumer>
   )
@@ -105,7 +107,10 @@ class SavedVideos extends Component {
                 <LeftSideBarDesktopViewContainer>
                   <LeftSideBar />
                 </LeftSideBarDesktopViewContainer>
-                <RouteContentContainer>
+                <RouteContentContainer
+                  data-testid="savedVideos"
+                  darkMode={darkMode}
+                >
                   {this.displaySavedVideosSectionView()}
                 </RouteContentContainer>
               </SavedAndLeftBarContainer>

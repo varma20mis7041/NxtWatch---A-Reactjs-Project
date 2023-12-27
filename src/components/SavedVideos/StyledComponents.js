@@ -3,10 +3,10 @@ import {RiMenuAddLine} from 'react-icons/ri'
 
 export const SavedAndLeftBarContainer = styled.div`
   display: flex;
-  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   min-height: 92vh;
 `
 export const RouteContentContainer = styled.div`
+  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   width: 85vw;
   margin-top: 8vh;
   @media screen and (min-width: 769px) {
@@ -20,6 +20,7 @@ export const RouteContentContainer = styled.div`
   }
 `
 export const SavedVideosBackgroundContainer = styled.div`
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
 `

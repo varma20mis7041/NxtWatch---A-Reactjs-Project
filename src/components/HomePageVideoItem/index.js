@@ -36,9 +36,12 @@ const HomePageVideoItem = props => {
         return (
           <StyledLink to={`/videos/${id}`}>
             <CustomListItem>
-              <ThumbnailImgElement src={thumbnailUrl} />
+              <ThumbnailImgElement src={thumbnailUrl} alt="video thumbnail" />
               <VideoInfoContainer>
-                <ChannelProfileImgElement src={channel.profileImageUrl} />
+                <ChannelProfileImgElement
+                  src={channel.profileImageUrl}
+                  alt="channel logo"
+                />
                 <VideoInfoRightSectionContainer>
                   <VideoInfoText title="true" darkMode={darkMode}>
                     {title}

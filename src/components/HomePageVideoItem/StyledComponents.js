@@ -68,8 +68,8 @@ export const VideoInfoRightSectionContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
 `
-export const VideoInfoText = styled.h1`
-  font-size: ${props => (props.title ? '18px' : '16px')};
+export const VideoInfoText = styled.p`
+  font-size: ${props => (props.title ? '17px' : '15px')};
   font-family: 'Roboto';
   margin-top: 0px;
   margin-bottom: 4px;

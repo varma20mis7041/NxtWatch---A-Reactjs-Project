@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderBackgroundContainer = styled.div`
+export const HeaderBackgroundContainer = styled.nav`
   position: fixed;
   top: 0;
   padding: 0px 50px 0px 50px;
@@ -28,7 +28,7 @@ export const HeaderSectionCustomImgElement = styled.img`
     height: 30px;
   }
 `
-export const HeaderRightSideContainer = styled.div`
+export const HeaderRightSideContainer = styled.ul`
   width: 10vw;
   display: flex;
   align-items: center;
@@ -42,6 +42,9 @@ export const HeaderRightSideContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 22vw;
   }
+`
+export const NavItem = styled.li`
+  list-style: none;
 `
 export const HeaderCustomButton = styled.button`
   border-width: 0;
@@ -65,7 +68,6 @@ export const MenuTabsButton = styled(ProfileButton)`
 `
 
 export const LogoutButton = styled.button`
-  display: none;
   @media screen and (min-width:768px){
   display:${props => (props.large ? 'block' : 'none')};
   height: 30px;
@@ -81,7 +83,7 @@ export const LogoutButton = styled.button`
   cursor: pointer;
   display
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:767px){
       display:${props => (props.small ? 'block' : 'none')};
       color: ${props => (props.darkMode ? '#f9f9f9' : '#181818')};
       border:0;
@@ -113,17 +115,26 @@ export const LogoutPopupContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    width: 300px;
+  }
 `
 export const LogoutPopupText = styled.h1`
   font-size: 20px;
   font-weight: 400;
   font-family: 'Roboto';
   color: ${props => (props.darkMode ? '#f9f9f9' : '#181818')};
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
 `
 export const ButtonsContainer = styled.div`
   width: 70%;
   display: flex;
   justify-content: space-around;
+  @media screen and (max-width: 767px) {
+    width: 80%;
+  }
 `
 export const CustomLogoutPopupButton = styled.button`
   height: 40px;
@@ -136,6 +147,9 @@ export const CustomLogoutPopupButton = styled.button`
   color: #ffffff;
   border-radius: 5px;
   cursor: pointer;
+  @media screen and (max-width: 767px) {
+    height: 30px;
+  }
 `
 export const CustomLogoutCancelPopupButton = styled(CustomLogoutPopupButton)`
   color: ${props => (props.darkMode ? '#f9f9f9' : '#181818')};

@@ -8,6 +8,7 @@ export const HomePageBackgroundContainer = styled.div`
   margin-top: 0px;
   display: flex;
   scroll-behavior: smooth;
+  background-color: ${props => (props.darkMode ? '#181818' : '#f9f9f9')};
 `
 
 export const HomePageVideosContainer = styled.div`
@@ -17,9 +18,11 @@ export const HomePageVideosContainer = styled.div`
     margin-left: 15vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1200px) {
+    margin-left: 20vw;
     width: 80vw;
   }
   @media screen and (max-width: 767px) {
+    margin-left: 0px;
     width: 100vw;
   }
 `
@@ -36,9 +39,6 @@ export const HomePageTopBannerContainer = styled.div`
     padding: 17px;
     height: 25vh;
     width: 100vw;
-  }
-  @media screen and (max-width: 567px) {
-    height: 30vh;
   }
 `
 
@@ -74,7 +74,7 @@ export const BannerImageElement = styled.img`
     width: 100px;
   }
 `
-export const BannerText = styled.h1`
+export const BannerText = styled.p`
   font-size: 20px;
   font-family: 'Roboto';
   font-weight: 500;
@@ -95,6 +95,11 @@ export const BannerButton = styled.button`
     height: 35px;
     width: 100px;
     margin-bottom: 20px;
+  }
+  @media screen and (max-width: 567px) {
+    font-size: 9px;
+    height: 40px;
+    width: 80px;
   }
 `
 export const BannerCloseButton = styled.button`

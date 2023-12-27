@@ -16,11 +16,11 @@ const GamingVideoItem = props => {
         return (
           <StyledLink to={`/videos/${id}`}>
             <GamingVideoListItem darkMode={darkMode}>
-              <ThumbnailImgElement src={thumbnailUrl} />
-              <VideoInfoText title darkMode={darkMode}>
+              <ThumbnailImgElement src={thumbnailUrl} alt="video thumbnail" />
+              <VideoInfoText title darkMode={darkMode} as="p">
                 {title}
               </VideoInfoText>
-              <VideoInfoText darkMode={darkMode}>
+              <VideoInfoText darkMode={darkMode} as="p">
                 {`${viewCount} Watching Worldwide`}
               </VideoInfoText>
             </GamingVideoListItem>

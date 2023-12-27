@@ -42,7 +42,7 @@ class Home extends Component {
     currentState: homePageActiveStates.initial,
     searchInput: '',
     homeVideosList: [],
-    isBannerClosed: false,
+    showBanner: true,
     isActiveTabUpdated: false,
   }
 
@@ -104,7 +104,7 @@ class Home extends Component {
             <NoVideoHeadingText darkMode={darkMode} as="p">
               Try different key words or remove search filter
             </NoVideoHeadingText>
-            <NoVideosRetryButton>Retry</NoVideosRetryButton>
+            <NoVideosRetryButton type="button">Retry</NoVideosRetryButton>
           </HomePageNoVideosContainer>
         )
       }}
@@ -141,13 +141,16 @@ class Home extends Component {
               alt="failure view"
             />
             <NoVideoHeadingText title="true" darkMode={darkMode}>
-              Opps! Something Went Wrong
+              Oops! Something Went Wrong
             </NoVideoHeadingText>
             <NoVideoHeadingText darkMode={darkMode} as="p">
               We are having some trouble to complete your request.Please try
               again
             </NoVideoHeadingText>
-            <NoVideosRetryButton onClick={this.onClickFailureRetry}>
+            <NoVideosRetryButton
+              onClick={this.onClickFailureRetry}
+              type="button"
+            >
               Retry
             </NoVideosRetryButton>
           </HomePageNoVideosContainer>
@@ -157,7 +160,7 @@ class Home extends Component {
   )
 
   onClickCloseBanner = () => {
-    this.setState({isBannerClosed: true})
+    this.setState({showBanner: false})
   }
 
   onChangeSearchInput = event => {
@@ -181,7 +184,7 @@ class Home extends Component {
   }
 
   render() {
-    const {isBannerClosed, isActiveTabUpdated} = this.state
+    const {showBanner, isActiveTabUpdated} = this.state
     return (
       <AppContext.Consumer>
         {value => {
@@ -194,23 +197,35 @@ class Home extends Component {
           return (
             <HomeRouteSectionView darkMode={darkMode}>
               <Header />
-              <HomePageBackgroundContainer>
+              <HomePageBackgroundContainer
+                data-testid="home"
+                darkMode={darkMode}
+              >
                 <LeftSideBarDesktopViewContainer>
                   <LeftSideBar />
                 </LeftSideBarDesktopViewContainer>
                 <HomePageVideosContainer>
-                  <HomePageTopBannerContainer isBannerClosed={isBannerClosed}>
-                    <BannerLeftContainer>
-                      <BannerImageElement src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png" />
-                      <BannerText>
-                        Buy Nxt Watch Premium prepaid plans with UPI
-                      </BannerText>
-                      <BannerButton>GET IT NOW</BannerButton>
-                    </BannerLeftContainer>
-                    <BannerCloseButton onClick={this.onClickCloseBanner}>
-                      <IoMdClose />
-                    </BannerCloseButton>
-                  </HomePageTopBannerContainer>
+                  {showBanner && (
+                    <HomePageTopBannerContainer data-testid="banner">
+                      <BannerLeftContainer>
+                        <BannerImageElement
+                          alt="nxt watch logo"
+                          src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                        />
+                        <BannerText>
+                          Buy Nxt Watch Premium prepaid plans with UPI
+                        </BannerText>
+                        <BannerButton>GET IT NOW</BannerButton>
+                      </BannerLeftContainer>
+                      <BannerCloseButton
+                        onClick={this.onClickCloseBanner}
+                        type="button"
+                        data-testid="close"
+                      >
+                        <IoMdClose />
+                      </BannerCloseButton>
+                    </HomePageTopBannerContainer>
+                  )}
                   <HomePageVideosSection darkMode={darkMode}>
                     <SearchBarContainer>
                       <SearchInput
@@ -220,7 +235,9 @@ class Home extends Component {
                         darkMode={darkMode}
                       />
                       <SearchButton
+                        data-testid="searchButton"
                         onClick={this.fetchVideos}
+                        type="button"
                         darkMode={darkMode}
                       >
                         <HiSearch size={18} />

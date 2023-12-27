@@ -13,7 +13,7 @@ import {
   SavedVideoChannelProfileImg,
 } from './StyledComponents'
 
-const TrendingVideoItem = props => {
+const SavedVideoItem = props => {
   const {videoDetails} = props
   const {
     channel,
@@ -34,12 +34,15 @@ const TrendingVideoItem = props => {
           <StyledLink to={`/videos/${id}`}>
             <SavedVideoListItem>
               <SavedVideoThumbnailContainer>
-                <SavedVideoThumbnailImgElement src={thumbnailUrl} />
+                <SavedVideoThumbnailImgElement
+                  src={thumbnailUrl}
+                  alt="video thumbnail"
+                />
               </SavedVideoThumbnailContainer>
               <SavedVideosBottomContainer>
                 <SavedVideoChannelProfileImg
                   src={channel.profileImageUrl}
-                  alt={title}
+                  alt="channel logo"
                 />
                 <SavedVideoItemInfoContainer>
                   <VideoInfoText title="true" darkMode={darkMode}>
@@ -62,4 +65,4 @@ const TrendingVideoItem = props => {
     </AppContext.Consumer>
   )
 }
-export default TrendingVideoItem
+export default SavedVideoItem

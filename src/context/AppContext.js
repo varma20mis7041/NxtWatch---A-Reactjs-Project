@@ -1,6 +1,6 @@
-import react from 'react'
+import React from 'react'
 
-const ThemeContext = react.createContext({
+const ThemeContext = React.createContext({
   darkMode: false,
   activeTabId: '',
   reactedList: [],

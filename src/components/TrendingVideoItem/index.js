@@ -34,7 +34,10 @@ const TrendingVideoItem = props => {
           <StyledLink to={`/videos/${id}`}>
             <TrendingVideoListItem>
               <TrendingVideoThumbnailContainer>
-                <TrendingVideoThumbnailImgElement src={thumbnailUrl} />
+                <TrendingVideoThumbnailImgElement
+                  src={thumbnailUrl}
+                  alt="video thumbnail"
+                />
               </TrendingVideoThumbnailContainer>
               <TrendingVideoDetailsContainer>
                 <TrendingVideoChannelProfileImg

@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import {HiFire} from 'react-icons/hi'
 
 export const RouteContentContainer = styled.div`
+  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   width: 85vw;
-  margin-top: 8vh;
   @media screen and (min-width: 769px) {
     margin-left: 15vw;
   }
@@ -16,8 +16,8 @@ export const RouteContentContainer = styled.div`
 `
 
 export const TrendingAndLeftBarContainer = styled.div`
+  margin-top: 8vh;
   display: flex;
-  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 
 export const TrendingVideosBackgroundContainer = styled.div`

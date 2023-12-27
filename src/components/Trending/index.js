@@ -128,13 +128,16 @@ class Trending extends Component {
               alt="failure view"
             />
             <NoVideoHeadingText title="true" darkMode={darkMode}>
-              Opps! Something Went Wrong
+              Oops! Something Went Wrong
             </NoVideoHeadingText>
             <NoVideoHeadingText darkMode={darkMode} as="p">
               We are having some trouble to complete your request.Please try
               again
             </NoVideoHeadingText>
-            <NoVideosRetryButton onClick={this.onClickFailureRetry}>
+            <NoVideosRetryButton
+              onClick={this.onClickFailureRetry}
+              type="button"
+            >
               Retry
             </NoVideosRetryButton>
           </NoVideosContainer>
@@ -176,7 +179,10 @@ class Trending extends Component {
                 <LeftSideBarDesktopViewContainer>
                   <LeftSideBar />
                 </LeftSideBarDesktopViewContainer>
-                <RouteContentContainer>
+                <RouteContentContainer
+                  data-testid="trending"
+                  darkMode={darkMode}
+                >
                   {this.displayTrendingView()}
                 </RouteContentContainer>
               </TrendingAndLeftBarContainer>

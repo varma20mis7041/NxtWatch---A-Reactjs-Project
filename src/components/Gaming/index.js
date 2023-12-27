@@ -13,6 +13,10 @@ import {
   GamingVideosUnOrderedListContainer,
   StyledGamingIcon,
   RouteContentContainer,
+  NoVideosContainer,
+  NoVideosImgElement,
+  NoVideoHeadingText,
+  NoVideosRetryButton,
 } from './StyledComponents'
 
 import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
@@ -34,11 +38,11 @@ class Gaming extends Component {
   }
 
   componentDidMount() {
-    this.setState({activeState: gamingActiveStates.loading})
     this.fetchGamingVideosList()
   }
 
   fetchGamingVideosList = async () => {
+    this.setState({activeState: gamingActiveStates.loading})
     const url = 'https://apis.ccbp.in/videos/gaming'
     const token = Cookies.get('jwt_token')
     const options = {
@@ -65,6 +69,8 @@ class Gaming extends Component {
       this.setState({activeState: gamingActiveStates.failure})
     }
   }
+
+  onClickFailureRetry = () => this.fetchGamingVideosList()
 
   displayGamingRouteLoadingView = () => <LoadingView />
 
@@ -95,6 +101,40 @@ class Gaming extends Component {
       </AppContext.Consumer>
     )
   }
+
+  displayGamingRouteFailureView = () => (
+    <AppContext.Consumer>
+      {value => {
+        const {darkMode} = value
+        return (
+          <NoVideosContainer darkMode={darkMode}>
+            <NoVideosImgElement
+              failure="true"
+              src={`${
+                darkMode
+                  ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+                  : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+              }`}
+              alt="failure view"
+            />
+            <NoVideoHeadingText title="true" darkMode={darkMode}>
+              Oops! Something Went Wrong
+            </NoVideoHeadingText>
+            <NoVideoHeadingText darkMode={darkMode} as="p">
+              We are having some trouble to complete your request.Please try
+              again
+            </NoVideoHeadingText>
+            <NoVideosRetryButton
+              onClick={this.onClickFailureRetry}
+              type="button"
+            >
+              Retry
+            </NoVideosRetryButton>
+          </NoVideosContainer>
+        )
+      }}
+    </AppContext.Consumer>
+  )
 
   displayGamingView = () => {
     const {activeState} = this.state
@@ -129,7 +169,7 @@ class Gaming extends Component {
                 <LeftSideBarDesktopViewContainer>
                   <LeftSideBar />
                 </LeftSideBarDesktopViewContainer>
-                <RouteContentContainer>
+                <RouteContentContainer data-testid="gaming" darkMode={darkMode}>
                   {this.displayGamingView()}
                 </RouteContentContainer>
               </GamingRouteLeftSideAndVideosContainer>

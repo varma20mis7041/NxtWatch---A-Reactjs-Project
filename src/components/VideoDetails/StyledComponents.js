@@ -3,10 +3,10 @@ import ReactPlayer from 'react-player'
 
 export const VideoDetailsRouteBgContainer = styled.div`
   display: flex;
-  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   min-height: 100vh;
 `
 export const RouteContentContainer = styled.div`
+  background-color: ${props => (props.darkMode ? '#0f0f0f' : '#f9f9f9')};
   width: 85vw;
   margin-top: 8vh;
   @media screen and (min-width: 769px) {
@@ -57,7 +57,7 @@ export const StyledReactPlayer = styled(ReactPlayer)`
   }
 `
 
-export const VideoDetailsCustomText = styled.h1`
+export const VideoDetailsCustomText = styled.p`
   font-size: ${props => (props.title ? '18px' : '14px')};
   font-family: 'Roboto';
   font-weight: ${props => (props.title ? '450' : '400')};
@@ -73,15 +73,15 @@ export const VideoDetailsCustomText = styled.h1`
   }
 `
 export const VideoDetailsCustomLargeText = styled(VideoDetailsCustomText)`
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
+  //   @media screen and (max-width: 767px) {
+  //     display: none;
+  //   }
 `
 export const VideoDetailsCustomSmallText = styled(VideoDetailsCustomText)`
-  display: none;
-  @media screen and (max-width: 767px) {
-    display: block;
-  }
+  //   display: none;
+  //   @media screen and (max-width: 767px) {
+  //     display: block;
+  //   }
 `
 export const VideoDetailsMiddleContainer = styled.div`
   display: flex;
@@ -131,13 +131,13 @@ export const CustomReactionButton = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: ${props =>
-    props.darkMode ? '#cccccc' : `${props.isActive ? '#3b82f6' : '#616e7c'}`};
+
   @media screen and (max-width: 767px) {
     margin-right: 15px;
   }
 `
-export const ReactionButtonText = styled.span`
+export const ReactionButtonText = styled.p`
+  color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 400;

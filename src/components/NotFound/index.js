@@ -8,6 +8,7 @@ const NotFound = () => (
       return (
         <NotFoundContainer>
           <PopupImg
+            alt="not found"
             src={`${
               darkMode
                 ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-dark-theme-img.png'
@@ -15,8 +16,8 @@ const NotFound = () => (
             }`}
           />
           <NotFoundText title="true">Page Not Found</NotFoundText>
-          <NotFoundText>
-            We are sorry,the page you requested could not be found
+          <NotFoundText as="p">
+            we are sorry, the page you requested could not be found.
           </NotFoundText>
         </NotFoundContainer>
       )
