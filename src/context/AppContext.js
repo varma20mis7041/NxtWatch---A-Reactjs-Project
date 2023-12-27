@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ThemeContext = React.createContext({
+const AppContext = React.createContext({
   darkMode: false,
   activeTabId: '',
   reactedList: [],
@@ -10,4 +10,4 @@ const ThemeContext = React.createContext({
   updateReactedVideos: () => {},
   updateSavedVideos: () => {},
 })
-export default ThemeContext
+export default AppContext
