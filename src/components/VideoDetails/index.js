@@ -227,11 +227,12 @@ class VideoDetails extends Component {
                     <CustomReactionButton
                       type="button"
                       onClick={updateLikeReaction}
+                      isActive={isActiveLike}
+                      //  style={{color: isActiveLike ? '#2563eb' : '#64748b'}}
                     >
-                      <BiLike
-                        size={18}
-                        color={isActiveLike ? '#2563eb' : '#64748b'}
-                      />
+                      <span>
+                        <BiLike size={18} />
+                      </span>
                       <ReactionButtonText isActive={isActiveLike}>
                         Like
                       </ReactionButtonText>
@@ -239,11 +240,10 @@ class VideoDetails extends Component {
                     <CustomReactionButton
                       type="button"
                       onClick={updateDislikeReaction}
+                      isActive={isActiveDislike}
+                      //  style={{color: isActiveDislike ? '#2563eb' : '#64748b'}}
                     >
-                      <BiDislike
-                        size={18}
-                        color={isActiveDislike ? '#2563eb' : '#64748b'}
-                      />
+                      <BiDislike size={18} />
                       <ReactionButtonText isActive={isActiveDislike}>
                         Dislike
                       </ReactionButtonText>

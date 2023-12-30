@@ -22,7 +22,9 @@ export const LeftBarContainer = styled.div`
   }
 `
 
-export const LeftBarTopSectionBgContainer = styled.div`
+export const LeftBarTopSectionBgContainer = styled.ul`
+  list-style-type: none;
+  padding: 0px;
   display: flex;
   flex-direction: column;
 `

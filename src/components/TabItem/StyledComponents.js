@@ -6,7 +6,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
-export const CustomTabItemButton = styled.button`
+export const CustomTabItem = styled.li`
   width: 100%;
   border-width: 0px;
   margin: 0px;

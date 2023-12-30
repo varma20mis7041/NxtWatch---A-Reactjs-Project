@@ -131,13 +131,14 @@ export const CustomReactionButton = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
 
   @media screen and (max-width: 767px) {
     margin-right: 15px;
   }
 `
-export const ReactionButtonText = styled.p`
-  color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
+export const ReactionButtonText = styled.span`
+  //  color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 400;
