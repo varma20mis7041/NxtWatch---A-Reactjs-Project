@@ -293,14 +293,14 @@ class VideoDetails extends Component {
                     </VideoDetailsCustomLargeText>
                   </ChannelDetailsAndDescriptionContainer>
                 </VideoDetailsChannelDetailsAndDescriptionContainer>
-                <VideoDetailsCustomSmallText
+                {/* <VideoDetailsCustomSmallText
                   videoDescription="true"
                   darkMode={darkMode}
                   small="true"
                   as="p"
                 >
                   {description}
-                </VideoDetailsCustomSmallText>
+                </VideoDetailsCustomSmallText> */}
               </VideoDetailsBottomContainer>
             </VideoDetailsContainer>
           )
