@@ -124,7 +124,13 @@ export const LikeDislikeSaveButtonsContainer = styled.div`
     justify-content: flex-start;
   }
 `
+export const ReactionContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const CustomReactionButton = styled.button`
+  margin-left: 5px;
   padding: 0px;
   background-color: transparent;
   border-width: 0px;
@@ -132,13 +138,6 @@ export const CustomReactionButton = styled.button`
   align-items: center;
   cursor: pointer;
   color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
-
-  @media screen and (max-width: 767px) {
-    margin-right: 15px;
-  }
-`
-export const ReactionButtonText = styled.span`
-  //  color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 400;
@@ -146,7 +145,12 @@ export const ReactionButtonText = styled.span`
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }
+
+  @media screen and (max-width: 767px) {
+    margin-right: 15px;
+  }
 `
+
 export const StyledHr = styled.hr`
   height: 2px;
   color: blue;

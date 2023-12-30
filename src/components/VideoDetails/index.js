@@ -17,7 +17,6 @@ import {
   DotSpanElement,
   LikeDislikeSaveButtonsContainer,
   CustomReactionButton,
-  ReactionButtonText,
   StyledHr,
   VideoDetailsChannelDetailsAndDescriptionContainer,
   ChannelDetailsAndDescriptionContainer,
@@ -32,6 +31,7 @@ import {
   NoVideoHeadingText,
   NoVideosRetryButton,
   RouteContentContainer,
+  ReactionContainer,
 } from './StyledComponents'
 
 import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
@@ -224,39 +224,47 @@ class VideoDetails extends Component {
                     </VideoDetailsCustomText>
                   </ViewsAndAgoContainer>
                   <LikeDislikeSaveButtonsContainer>
-                    <CustomReactionButton
-                      type="button"
-                      onClick={updateLikeReaction}
-                      isActive={isActiveLike}
-                      //  style={{color: isActiveLike ? '#2563eb' : '#64748b'}}
-                    >
-                      <span>
-                        <BiLike size={18} />
-                      </span>
-                      <ReactionButtonText isActive={isActiveLike}>
+                    <ReactionContainer>
+                      <BiLike
+                        size={18}
+                        color={isActiveLike ? '#2563eb' : '#64748b'}
+                      />
+                      <CustomReactionButton
+                        type="button"
+                        onClick={updateLikeReaction}
+                        isActive={isActiveLike}
+                        //  style={{color: isActiveLike ? '#2563eb' : '#64748b'}}
+                      >
                         Like
-                      </ReactionButtonText>
-                    </CustomReactionButton>
-                    <CustomReactionButton
-                      type="button"
-                      onClick={updateDislikeReaction}
-                      isActive={isActiveDislike}
-                      //  style={{color: isActiveDislike ? '#2563eb' : '#64748b'}}
-                    >
-                      <BiDislike size={18} />
-                      <ReactionButtonText isActive={isActiveDislike}>
+                      </CustomReactionButton>
+                    </ReactionContainer>
+                    <ReactionContainer>
+                      <BiDislike
+                        size={18}
+                        color={isActiveDislike ? '#2563eb' : '#64748b'}
+                      />
+                      <CustomReactionButton
+                        type="button"
+                        onClick={updateDislikeReaction}
+                        isActive={isActiveDislike}
+                        //  style={{color: isActiveDislike ? '#2563eb' : '#64748b'}}
+                      >
                         Dislike
-                      </ReactionButtonText>
-                    </CustomReactionButton>
-                    <CustomReactionButton type="button" onClick={onClickSave}>
+                      </CustomReactionButton>
+                    </ReactionContainer>
+                    <ReactionContainer>
                       <RiMenuAddLine
                         size={18}
                         color={isSaved ? '#2563eb' : '#64748b'}
                       />
-                      <ReactionButtonText isActive={isSaved}>
+                      <CustomReactionButton
+                        type="button"
+                        onClick={onClickSave}
+                        isActive={isSaved}
+                      >
                         {saveButtonTextContent}
-                      </ReactionButtonText>
-                    </CustomReactionButton>
+                      </CustomReactionButton>
+                    </ReactionContainer>
                   </LikeDislikeSaveButtonsContainer>
                 </VideoDetailsMiddleContainer>
                 <StyledHr />
