@@ -28,7 +28,6 @@ import {
   NoVideoHeadingText,
   NoVideosRetryButton,
 } from './StyledComponents'
-import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
 
 const homePageActiveStates = {
   initial: 'INITIAL',
@@ -201,9 +200,8 @@ class Home extends Component {
                 data-testid="home"
                 darkMode={darkMode}
               >
-                <LeftSideBarDesktopViewContainer>
-                  <LeftSideBar />
-                </LeftSideBarDesktopViewContainer>
+                <LeftSideBar />
+
                 <HomePageVideosContainer>
                   {showBanner && (
                     <HomePageTopBannerContainer data-testid="banner">

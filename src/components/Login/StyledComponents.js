@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const LoginRouteBackgroundContainer = styled.div`
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${props => (props.darkMode ? '#231f20' : '#f9f9f9')};
@@ -23,6 +24,7 @@ export const LoginFormCardContainer = styled.form`
     height: 60vh;
     padding: 25px;
   }
+  margin-bottom: 100px;
 `
 export const LoginPageLogoImgElement = styled.img`
   height: 45px;
@@ -90,4 +92,35 @@ export const ErrorMessage = styled.p`
   color: #ff0b37;
   margin: 0px;
   align-self: flex-start;
+`
+export const NoteContainer = styled.div`
+  font-family: 'Roboto';
+  background-color: ${props => (props.darkMode ? '#000000' : '#ffffff')};
+  border-radius: 10px;
+  height: 35vh;
+  padding: 10px;
+`
+
+export const NoteText = styled.p`
+  color: ${props => (props.darkMode ? '#f1f5f9' : '#181818')};
+  font-family: 'Roboto';
+  text-align: ${props => props.greet && 'center'};
+`
+export const NoteCustomButton = styled.button`
+  margin: 0px;
+  height: 40px;
+  width: 150px;
+  border-width: 0px;
+  color: #f1f5f9;
+  background-color: blue;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+`
+export const CloseButton = styled.button`
+  padding: 0;
+  border-width: 0px;
+  background-color: transparent;
+  cursor: pointer;
 `

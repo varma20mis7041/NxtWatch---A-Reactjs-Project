@@ -18,8 +18,6 @@ import {
   RouteContentContainer,
 } from './StyledComponents'
 
-import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
-
 class SavedVideos extends Component {
   state = {
     isActiveTabUpdated: false,
@@ -104,9 +102,8 @@ class SavedVideos extends Component {
             <>
               <Header />
               <SavedAndLeftBarContainer darkMode={darkMode}>
-                <LeftSideBarDesktopViewContainer>
-                  <LeftSideBar />
-                </LeftSideBarDesktopViewContainer>
+                <LeftSideBar />
+
                 <RouteContentContainer
                   data-testid="savedVideos"
                   darkMode={darkMode}

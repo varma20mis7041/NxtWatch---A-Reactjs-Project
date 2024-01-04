@@ -34,7 +34,6 @@ import {
   ReactionContainer,
 } from './StyledComponents'
 
-import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
 import {ChannelProfileImgElement} from '../HomePageVideoItem/StyledComponents'
 
 const videoDetailsActiveStates = {
@@ -330,9 +329,7 @@ class VideoDetails extends Component {
             <>
               <Header />
               <VideoDetailsRouteBgContainer>
-                <LeftSideBarDesktopViewContainer>
-                  <LeftSideBar />
-                </LeftSideBarDesktopViewContainer>
+                <LeftSideBar />
                 <RouteContentContainer
                   data-testid="videoItemDetails"
                   darkMode={darkMode}

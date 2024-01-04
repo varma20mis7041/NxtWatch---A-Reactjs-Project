@@ -7,8 +7,6 @@ import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import AppContext from '../../context/AppContext'
-// import {LeftSideBarMobileViewContainer} from '../TabsDisplayStyledComponents'
-// import LeftSideBar from '../LeftSideBar'
 import {LeftBarTopSectionBgContainer} from '../LeftSideBar/StyledComponents'
 import './index.css'
 

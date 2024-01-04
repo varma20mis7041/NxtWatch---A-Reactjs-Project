@@ -21,8 +21,6 @@ import {
   RouteContentContainer,
 } from './StyledComponents'
 
-import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
-
 const trendingActiveStates = {
   initial: 'INITIAL',
   loading: 'LOADING',
@@ -176,9 +174,8 @@ class Trending extends Component {
             <>
               <Header />
               <TrendingAndLeftBarContainer darkMode={darkMode}>
-                <LeftSideBarDesktopViewContainer>
-                  <LeftSideBar />
-                </LeftSideBarDesktopViewContainer>
+                <LeftSideBar />
+
                 <RouteContentContainer
                   data-testid="trending"
                   darkMode={darkMode}

@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
-
+import Popup from 'reactjs-popup'
+import {MdClose} from 'react-icons/md'
 import {Redirect} from 'react-router-dom'
 
 import {Component} from 'react'
@@ -14,6 +15,10 @@ import {
   CheckBoxContainer,
   ShowPasswordLabelElement,
   ErrorMessage,
+  NoteContainer,
+  NoteText,
+  NoteCustomButton,
+  CloseButton,
 } from './StyledComponents'
 
 import AppContext from '../../context/AppContext'
@@ -143,6 +148,50 @@ class Login extends Component {
                 <CustomLoginButton type="submit">Login</CustomLoginButton>
                 <ErrorMessage>{showErrorMsg && `*${errorMsg}`}</ErrorMessage>
               </LoginFormCardContainer>
+              <Popup
+                trigger={
+                  <NoteCustomButton darkMode={darkMode}>
+                    Login Credintials
+                  </NoteCustomButton>
+                }
+                className="pop_menu_content"
+                modal
+              >
+                {close => (
+                  <NoteContainer darkMode={darkMode}>
+                    <CloseButton
+                      onClick={() => close()}
+                      type="button"
+                      small="true"
+                    >
+                      <MdClose
+                        size={25}
+                        color={darkMode ? '#ffffff' : '#000000'}
+                      />
+                    </CloseButton>
+                    <NoteContainer
+                      className="note_container"
+                      darkMode={darkMode}
+                    >
+                      <NoteText className="note_heading" darkMode={darkMode}>
+                        Note:
+                      </NoteText>
+                      <NoteText darkMode={darkMode}>
+                        To practice authentication and authorization, i used
+                        login api from nxtwave company . So to test this
+                        application
+                      </NoteText>
+                      <NoteText darkMode={darkMode}>username : rahul</NoteText>
+                      <NoteText darkMode={darkMode}>
+                        password : rahul@2021
+                      </NoteText>
+                      <NoteText greet="true" darkMode={darkMode}>
+                        thanks for visiting
+                      </NoteText>
+                    </NoteContainer>
+                  </NoteContainer>
+                )}
+              </Popup>
             </LoginRouteBackgroundContainer>
           )
         }}

@@ -8,6 +8,12 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <div className="last_container">
+        <p>
+          Developed by @Bhargav varma | Date of completion : 4 Jan 2024 |
+          contact : bhargav.coding@gmail.com{' '}
+        </p>
+      </div>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),

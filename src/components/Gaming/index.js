@@ -19,7 +19,6 @@ import {
   NoVideosRetryButton,
 } from './StyledComponents'
 
-import {LeftSideBarDesktopViewContainer} from '../TabsDisplayStyledComponents'
 import LeftSideBar from '../LeftSideBar'
 import LoadingView from '../LoadingView'
 
@@ -166,9 +165,7 @@ class Gaming extends Component {
             <>
               <Header />
               <GamingRouteLeftSideAndVideosContainer darkMode={darkMode}>
-                <LeftSideBarDesktopViewContainer>
-                  <LeftSideBar />
-                </LeftSideBarDesktopViewContainer>
+                <LeftSideBar />
                 <RouteContentContainer data-testid="gaming" darkMode={darkMode}>
                   {this.displayGamingView()}
                 </RouteContentContainer>
