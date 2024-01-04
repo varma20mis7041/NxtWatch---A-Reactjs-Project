@@ -8,6 +8,7 @@ export const RouteContentContainer = styled.div`
     margin-left: 15vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1200px) {
+    margin-left: 20vw;
     width: 80vw;
   }
   @media screen and (max-width: 767px) {

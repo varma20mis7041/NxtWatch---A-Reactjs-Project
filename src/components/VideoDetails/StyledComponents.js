@@ -13,6 +13,7 @@ export const RouteContentContainer = styled.div`
     margin-left: 15vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1200px) {
+    margin-left: 20vw;
     width: 80vw;
   }
   @media screen and (max-width: 767px) {
@@ -73,15 +74,15 @@ export const VideoDetailsCustomText = styled.p`
   }
 `
 export const VideoDetailsCustomLargeText = styled(VideoDetailsCustomText)`
-  //   @media screen and (max-width: 767px) {
-  //     display: none;
-  //   }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `
 export const VideoDetailsCustomSmallText = styled(VideoDetailsCustomText)`
-  //   display: none;
-  //   @media screen and (max-width: 767px) {
-  //     display: block;
-  //   }
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 `
 export const VideoDetailsMiddleContainer = styled.div`
   display: flex;

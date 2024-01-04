@@ -7,8 +7,10 @@ import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import AppContext from '../../context/AppContext'
-import {LeftSideBarMobileViewContainer} from '../TabsDisplayStyledComponents'
-import LeftSideBar from '../LeftSideBar'
+// import {LeftSideBarMobileViewContainer} from '../TabsDisplayStyledComponents'
+// import LeftSideBar from '../LeftSideBar'
+import {LeftBarTopSectionBgContainer} from '../LeftSideBar/StyledComponents'
+import './index.css'
 
 import {
   HeaderBackgroundContainer,
@@ -28,6 +30,7 @@ import {
   NavItem,
 } from './StyledComponents'
 import {StyledLink} from '../TabItem/StyledComponents'
+import TabItem from '../TabItem'
 
 const Header = props => {
   console.log('header')
@@ -36,6 +39,29 @@ const Header = props => {
     const {history} = props
     history.replace('/login')
   }
+  const TabsList = [
+    {
+      tabId: 'HOME',
+      displayText: 'Home',
+      routeText: '/',
+    },
+    {
+      tabId: 'TRENDING',
+      displayText: 'Trending',
+      routeText: '/trending',
+    },
+    {
+      tabId: 'GAMING',
+      displayText: 'Gaming',
+      routeText: '/gaming',
+    },
+    {
+      tabId: 'SAVED VIDEOS',
+      displayText: 'Saved videos',
+      routeText: '/saved-videos',
+    },
+  ]
+
   return (
     <AppContext.Consumer>
       {value => {
@@ -87,22 +113,25 @@ const Header = props => {
                       />
                     </TabsMenuContainer>
                   }
+                  className="pop_menu_content"
                 >
                   {close => (
                     <PopupContainer darkMode={darkMode}>
                       <MenuTabsButton
                         onClick={() => close()}
                         type="button"
-                        small
+                        small="true"
                       >
                         <MdClose
                           size={25}
                           color={darkMode ? '#ffffff' : '#000000'}
                         />
                       </MenuTabsButton>
-                      <LeftSideBarMobileViewContainer>
-                        <LeftSideBar />
-                      </LeftSideBarMobileViewContainer>
+                      <LeftBarTopSectionBgContainer>
+                        {TabsList.map(eachTab => (
+                          <TabItem tabDetails={eachTab} key={eachTab.tabId} />
+                        ))}
+                      </LeftBarTopSectionBgContainer>
                     </PopupContainer>
                   )}
                 </Popup>
@@ -120,6 +149,7 @@ const Header = props => {
                     </LogoutButton>
                   }
                   modal
+                  className="popup-content"
                 >
                   {close => (
                     <LogoutPopupContainer darkMode={darkMode}>
@@ -159,6 +189,7 @@ const Header = props => {
                     </LogoutButton>
                   }
                   modal
+                  className="popup-content"
                 >
                   {close => (
                     <LogoutPopupContainer darkMode={darkMode}>

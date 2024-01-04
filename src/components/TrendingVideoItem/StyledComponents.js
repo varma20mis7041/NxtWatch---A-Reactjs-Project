@@ -6,11 +6,11 @@ export const StyledLink = styled(Link)`
   height: 30vh;
   margin-bottom: 60px;
   @media screen and (min-width: 1000px) and (max-width: 1600px) {
-    height: 25vh;
+    height: 35vh;
     margin-bottom: 40px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1000px) {
-    height: 22vh;
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    height: 25vh;
     margin-bottom: 30px;
   }
   @media screen and (max-width: 767px) {
@@ -32,8 +32,14 @@ export const TrendingVideoListItem = styled.li`
   }
 `
 export const TrendingVideoThumbnailContainer = styled.div`
-  width: 500px;
-  margin-right: 30px;
+  min-width: 500px;
+  max-width: 500px;
+  margin-right: 15px;
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    min-width: 400px;
+    max-width: 400px;
+    margin-right: 10px;
+  }
   @media screen and (max-width: 767px) {
     min-width: 300px;
     max-width: 300px;
@@ -52,7 +58,7 @@ export const TrendingVideoDetailsContainer = styled.div`
 `
 export const TrendingVideoThumbnailImgElement = styled.img`
   height: 100%;
-  width: 100%;
+  max-width: 100%;
 `
 export const TrendingVideoItemInfoContainer = styled.div`
   display: flex;

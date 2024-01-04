@@ -17,8 +17,7 @@ export const LeftBarContainer = styled.div`
     padding-top: 15px;
   }
   @media screen and (max-width: 767px) {
-    height: 90vh;
-    min-width: 100vw;
+    display: none;
   }
 `
 
@@ -44,8 +43,12 @@ export const LeftBarHeadingText = styled.h1`
   font-weight: ${props => (props.description ? '500' : '600')};
   color: #212121;
   color: ${props => (props.darkMode ? '#f4f4f4' : '#212121')};
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
     font-size: ${props => (props.description ? '15px' : '17px')};
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    font-weight: 600;
   }
 `
 export const SocialMediaLinksContainer = styled.div`

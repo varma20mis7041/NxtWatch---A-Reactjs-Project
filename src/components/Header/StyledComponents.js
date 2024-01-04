@@ -29,10 +29,14 @@ export const HeaderSectionCustomImgElement = styled.img`
   }
 `
 export const HeaderRightSideContainer = styled.ul`
+  padding: 0px;
   width: 10vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: 1101px) and (max-width: 1600px) {
+    width: 15vw;
+  }
   @media screen and (min-width: 768px) and (max-width: 1100px) {
     width: 23vw;
   }
@@ -55,6 +59,7 @@ export const HeaderCustomButton = styled.button`
 `
 export const ProfileButton = styled(HeaderCustomButton)`
   cursor: auto;
+  margin-left: 10px;
   display: ${props => (props.large ? 'block' : 'none')};
   @media screen and (max-width: 768px) {
     display: ${props => (props.small ? 'block' : 'none')};
@@ -62,9 +67,11 @@ export const ProfileButton = styled(HeaderCustomButton)`
   }
 `
 export const MenuTabsButton = styled(ProfileButton)`
-  margin: 20px;
+  display: block;
   cursor: pointer;
   align-self: flex-end;
+  margin-top: 5px;
+  margin-left: 8px;
 `
 
 export const LogoutButton = styled.button`
@@ -98,13 +105,18 @@ export const TabsMenuContainer = styled.div`
   }
 `
 export const PopupContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: ${props => (props.darkMode ? '#181818' : '#f4f4f4')};
+  // padding-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  top: 8vh;
+  align-items: center;
+  //   min-height: 100vh;
+  width: 80vw;
+  //   min-width: 90vw;
+  background-color: ${props => (props.darkMode ? '#181818' : '#ffffff')};
+  border-radius: 10px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
 `
 export const LogoutPopupContainer = styled.div`
   height: 200px;

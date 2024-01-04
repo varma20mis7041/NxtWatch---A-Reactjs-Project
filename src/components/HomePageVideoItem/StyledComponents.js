@@ -4,11 +4,17 @@ import {Link} from 'react-router-dom'
 export const StyledLink = styled(Link)`
   text-decoration: none;
   width: 19vw;
-  height: 36vh;
+  height: 35vh;
   margin-bottom: 24px;
   margin-right: 20px;
   cursor: pointer;
-  @media screen and (min-width: 1200px) and (max-width: 1700px) {
+  @media screen and (min-width: 1500px) and (max-width: 1700px) {
+    height: 45vh;
+    width: 25vw;
+    margin-right: 18px;
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1500px) {
+    height: 38vh;
     width: 25vw;
     margin-right: 18px;
   }
@@ -25,6 +31,7 @@ export const StyledLink = styled(Link)`
     margin-right: 10px;
   }
   @media screen and (max-width: 576px) {
+    height: 36vh;
     width: 100%;
     margin-right: 0px;
     margin-bottom: 45px;

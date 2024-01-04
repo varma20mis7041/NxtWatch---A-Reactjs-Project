@@ -11,7 +11,7 @@ const TabItem = props => {
   const {tabDetails} = props
   const {displayText, tabId, routeText} = tabDetails
 
-  const iconSize = 27
+  const iconSize = 24
 
   const getIcon = () => {
     switch (tabId) {

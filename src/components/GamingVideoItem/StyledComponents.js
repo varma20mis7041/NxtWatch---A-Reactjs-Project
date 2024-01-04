@@ -3,26 +3,20 @@ import {Link} from 'react-router-dom'
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  height: 47vh;
   width: 16vw;
   margin-right: 40px;
   margin-bottom: 40px;
   @media screen and (min-width: 1600px) and (max-width: 1800px) {
-    min-height: 35vh;
-    max-height: 40vh;
-    height: 35vh;
+    width: 20vw;
     margin-right: 20px;
     margin-bottom: 30px;
   }
   @media screen and (min-width: 1000px) and (max-width: 1600px) {
-    min-height: 35vh;
-    max-height: 40vh;
-    width: 22vw;
-    margin-right: 20px;
+    width: 15vw;
+    margin-right: 40px;
     margin-bottom: 30px;
   }
   @media screen and (min-width: 768px) and (max-width: 1000px) {
-    height: 40vh;
     width: 32vw;
     margin-right: 35px;
     margin-bottom: 20px;

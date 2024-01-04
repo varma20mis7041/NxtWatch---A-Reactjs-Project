@@ -6,11 +6,11 @@ export const StyledLink = styled(Link)`
   height: 30vh;
   margin-bottom: 60px;
   @media screen and (min-width: 1000px) and (max-width: 1600px) {
-    height: 25vh;
+    height: 35vh;
     margin-bottom: 40px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1000px) {
-    height: 22vh;
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    height: 25vh;
     margin-bottom: 30px;
   }
   @media screen and (max-width: 767px) {
@@ -19,20 +19,29 @@ export const StyledLink = styled(Link)`
   }
   @media screen and (max-width: 567px) {
     height: 40vh;
+    margin-bottom: 20px;
   }
 `
 
 export const SavedVideoListItem = styled.li`
   display: flex;
   height: 100%;
+  width: 100%;
   @media screen and (max-width: 567px) {
     display: flex;
     flex-direction: column;
   }
 `
 export const SavedVideoThumbnailContainer = styled.div`
-  width: 500px;
+  min-width: 500px;
+  max-width: 500px;
+  height: 100%;
   margin-right: 30px;
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    min-width: 400px;
+    max-width: 400px;
+    margin-right: 10px;
+  }
   @media screen and (max-width: 767px) {
     min-width: 300px;
     max-width: 300px;
@@ -40,6 +49,7 @@ export const SavedVideoThumbnailContainer = styled.div`
   }
   @media (max-width: 567px) {
     min-width: 100vw;
+    height: 70%;
     margin-right: 0px;
   }
 `

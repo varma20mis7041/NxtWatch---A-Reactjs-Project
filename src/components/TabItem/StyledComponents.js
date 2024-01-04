@@ -30,6 +30,10 @@ export const CustomTabItem = styled.li`
   @media screen and (max-width: 1400px) {
     padding-left: 5px 0px 5px 8px;
   }
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    font-size: 15px;
+  }
 `
 
 export const ReactIcon = styled.span`

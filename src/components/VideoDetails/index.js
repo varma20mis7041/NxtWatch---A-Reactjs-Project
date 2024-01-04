@@ -233,7 +233,6 @@ class VideoDetails extends Component {
                         type="button"
                         onClick={updateLikeReaction}
                         isActive={isActiveLike}
-                        //  style={{color: isActiveLike ? '#2563eb' : '#64748b'}}
                       >
                         Like
                       </CustomReactionButton>
@@ -247,7 +246,6 @@ class VideoDetails extends Component {
                         type="button"
                         onClick={updateDislikeReaction}
                         isActive={isActiveDislike}
-                        //  style={{color: isActiveDislike ? '#2563eb' : '#64748b'}}
                       >
                         Dislike
                       </CustomReactionButton>
@@ -293,14 +291,14 @@ class VideoDetails extends Component {
                     </VideoDetailsCustomLargeText>
                   </ChannelDetailsAndDescriptionContainer>
                 </VideoDetailsChannelDetailsAndDescriptionContainer>
-                {/* <VideoDetailsCustomSmallText
+                <VideoDetailsCustomSmallText
                   videoDescription="true"
                   darkMode={darkMode}
                   small="true"
                   as="p"
                 >
                   {description}
-                </VideoDetailsCustomSmallText> */}
+                </VideoDetailsCustomSmallText>
               </VideoDetailsBottomContainer>
             </VideoDetailsContainer>
           )
