@@ -151,7 +151,7 @@ class Login extends Component {
               <Popup
                 trigger={
                   <NoteCustomButton darkMode={darkMode}>
-                    Login Credintials
+                    Login Credentials
                   </NoteCustomButton>
                 }
                 className="pop_menu_content"
