@@ -1,5 +1,5 @@
 
-Live Demo Link : [link]https://bvreactjs46.ccbp.tech/
+Live Demo Link : https://bvreactjs46.ccbp.tech/
 
 In this assignment let's build an **Nxt Watch** by applying the concepts we have learned till now.
 
